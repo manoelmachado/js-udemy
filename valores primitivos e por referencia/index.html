@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores primitivos e valores por referência</title>
+</head>
+<body>
+    <h1>Valores primitivos e valores por referência</h1>
+    <h2>
+        Primitivos (imutáveis): - string, number, boolean, undefined, null (bigint, symbol)  - Valores copiados<br>
+        O que são valores imutáveis? São dados que não conseguimos mudar o tipo de valor.
+    </h2>
+    <p>
+        Exemplo: <br>
+        let nome = 'Luiz'; <br>
+        nome = 'Otávio'; <br>
+        console.log(nome); <br>
+        <br>
+        Nesse caso, não estamos mudando o tipo do valor primitivo, estamos trocando o valor da variável.     
+    </p>
+    <p>
+        Podemos fazer uma cópia do dado primitivo usando a seguinte sintaxe: <br>
+        let a = 'A'; <br>
+        let b = a; <br>
+        console.log(a, b); <br>
+        nesse caso, a variável <strong>a</strong> não depende de <strong>b</strong>, assim como <strong>a</strong> variável <strong>b</strong> não depende de <strong>a</strong> (a não ser para pegar o seu valor), então a variável <strong>b</strong> vai manter o seu valor independente se o valor da variável <strong>a</strong> mudar. <br>
+    </p>
+    <p>
+        Por exemplo: <br>
+        a = 'Outra coisa'; <br>
+        console.log(a, b); <br>
+        Alterando o valor de <strong>a</strong>, não alteramos o valor de <strong>b</strong> pois foi feito uma cópia do valor de <strong>a</strong> quando o valor é <strong>primitivo</strong>.
+    </p>
+    <h2>Referência (mutáveis) - array, object, function - valores passados por referência</h2>
+    <p>
+        Exemplo: <br>
+        let a = [1, 2, 3]; <br>
+        let b = a; <br>
+        console.log(a, b); <br> <br>
+        Como esses dados são passados por referência, eles vão apontar para o mesmo valor na memória então se alterarmos qualquer um dos valores, os dois mudarão. <br>
+        Exemplo: <br> <br>
+        let a = [1, 2, 3]; <br>
+        let b = a; <br>
+        console.log(a, b); <br>
+        a.push(4); <br>
+        console.log(a, b); <br>
+        b.pop(); <br>
+        console.log(a, b); <br>
+    </p>
+    <p>Verificamos então que os valores de <strong>a</strong> e <strong>b</strong> foram afetados com o comando <strong>a.push(4)</strong>, mesmo falando especificamente para alterar somente a variável <strong>a</strong> e <strong>b</strong> em nosso comando respectivamente. Nesse caso, não estamos copiando o valor como anteriormente e sim apontando o valor para o mesmo lugar na memória.
+    </p>
+    <p>
+        Se por acaso quiséssemos COPIAR o valor de <strong>a</strong>, podemos usar um operador bem simples, veja:
+    </p>
+    <p>
+        let a = [1, 2, 3]; <br>
+        <strong>let b = [...a]; <br></strong>
+    </p>
+    <hr>
+    <p>
+        Isso também serve para objetos, vejamos:
+    </p>
+    <p>
+        const a = { <br>
+            nome: 'Luiz', <br>
+            sobrenome: 'Otávio' <br>
+        }; <br>
+        const b = a <br>
+        a.nome = 'João';
+        console.log(b);
+    </p>
+    <p>
+        O valor de <strong>b</strong> vai apotar para o mesmo lugar que <strong>a</strong> está apontando na memória, fazendo que qualquer alteração na const <strong>a</strong>, seja aplicada na const <strong>b</strong>.
+    </p>
+    <p>Caso queiramos que o valor seja copiado, devemos fazer da seguinte maneira:</p>
+    <p>
+        const a = { <br>
+            nome: 'Luiz', <br>
+            sobrenome: 'otávio' <br>
+        }; <br>
+        const b = {...a} <br>
+        a.nome = 'João';
+        console.log(b);
+    </p>
+    <p>Então, nesse caso, independente da alteração feita na const <strong>a</strong>, a const <strong>b</strong> vai ter o mesmo valor que a const <strong>a</strong> no início.</p>
+    
+</body>
+</html>
