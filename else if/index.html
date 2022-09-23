@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizando if, else e else if</title>
+</head>
+<body>
+    <h1>Utilizando if, else e else if</h1>
+    <p>Usamos o comando <strong>if, else e else if</strong> para executar diferentes ações com base em diferentes condições. Muitas vezes quando você escreve um código, você quer executar uma ação diferente para uma decisão diferente.</p>
+    <p>Usamos <strong>if</strong> para especificar um bloco de código para ser executado, se a condição especificada for verdadeira.</p>
+    <p>Usamos <strong>else</strong> para especificar um bloco de código para ser executado, se a mesma condição for falsa.</p>
+    <p>Usamos <strong>else if</strong> para espeficar uma nova condição a ser testada, se a primeira condição for falsa.</p>
+    
+    <h2>A declaração if</h2>
+    <p><strong>Sintaxe: </strong><br>
+    if (condição) { <br>
+        // bloco do código para ser executado caso a condição for TRUE <br>
+    } <br>
+    </p>
+
+    <p><strong>Exemplo:</strong> <br>
+    if (hora < 12) { <br>
+        console.log('Bom dia') <br>
+    } <br>
+    </p>
+
+    <h2>A declaração else</h2>
+    <p><strong>Sintaxe:</strong> <br>
+    if (condição) { <br>
+        // bloco do código para ser executado caso a condição for TRUE <br>
+        } else { <br>
+        // bloco do código para ser executado caso a condição for FALSE <br>
+        }
+    </p>
+
+    <p><strong>Exemplo:</strong> <br>
+    if (hora < 12) { <br>
+        console.log('Bom dia') <br>
+    } else { <br>
+        console.log('Boa tarde ou noite') <br>
+    }
+    </p>
+
+    <h2>A declaração else if</h2>
+    <p><strong>Sintaxe:</strong> <br>
+        if (condição) { <br>
+            // bloco do código para ser executado caso a condição for TRUE <br>
+        } else if (condição2) { <br>
+            // bloco do código para ser executado caso a condição1 for FALSE e a condição2 for TRUE <br>
+        } else { <br>
+            // bloco do código par ser executado se a condição1 for FALSE e a condição2 for FALSE
+        }
+    </p>
+
+    <p><strong>Exemplo:</strong> <br>
+    if (hora < 12) { <br> 
+        console.log('Bom dia') <br>
+    } else if (hora < 18) { <br>
+        console.log('Boa tarde') <br>
+    } else { <br>
+        console.log('Boa noite') <br>
+    }
+    </p>
+</body>
+</html>
