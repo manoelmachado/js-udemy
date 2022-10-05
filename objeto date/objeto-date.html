@@ -63,11 +63,27 @@
     <p>const d = new Date(-100000000000);</p>
     <details id="demo11"></details>
     <p>Um dia tem aproximadamente 86 400 000 milissegundos:</p>
-    <p>const d12 = new Date(86400000);</p>
+    <p>const d = new Date(86400000);</p>
     <details id="demo12"></details>
-
-
-
+    <hr>
+    <h2>Exibindo datas</h2>
+    <p>JavaScript irá, por padrão, exibir as datas como um texto em string:</p>
+    <p>const d = new Date();</p>
+    <details id="demo13"></details>
+    <p>Quando você exibe um objeto data no HTML, é automaticamente convertido para uma string, com o método toString():</p>
+    <p>const d = new Date(); <br>
+    document.getElementById("demo").innerHTML = d.toString();</p>
+    <details id="demo14"></details>
+    <p>O método toUTCString() converte a data para uma string UTC (um padrão de exibição de data):</p>
+    <p>const d = new Date(); <br>
+    d.toUTCString();</p>
+    <details id="demo15"></details>
+    <p>O método toDateString() converte a data para uma string com uma leitura mais fácil:</p>
+    <details id="demo16"></details>
+    <p>O método toISOString() converte um objeto Data para uma string usando o padrão do formato ISO:</p>
+    <p>const d = new Date(); <br>
+    document.getElementById("demo").innerHTML = d.toISOString();</p>
+    <details id="demo17"></details>
 
 <script>
     const d = new Date();
@@ -108,6 +124,21 @@
 
     const d12 = new Date(86400000);
     document.getElementById("demo12").innerHTML = d12;
+
+    const d13 = new Date();
+    document.getElementById("demo13").innerHTML = d13;
+
+    const d14 = new Date();
+    document.getElementById("demo14").innerHTML = d14.toString();
+
+    const d15 = new Date();
+    document.getElementById("demo15").innerHTML = d15.toUTCString();
+
+    const d16 = new Date();
+    document.getElementById("demo16").innerHTML = d16.toDateString();
+
+    const d17 = new Date();
+    document.getElementById("demo17").innerHTML = d17.toISOString();
 </script>
     
 </body>
