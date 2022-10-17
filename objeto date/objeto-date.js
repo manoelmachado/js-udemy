@@ -43,3 +43,30 @@ console.log(data.toString());
 para obter o número de milissegundos do marco 0 até hoje:
 console.log(Date.now())
 */
+
+
+/*
+quando tentamos mostrar a data numa string, ela não mostra os zeros à esquerda, portanto temos que criar uma função para poder adicionar um zero à esquerda caso esse número seja menor que 10, por exemplo:
+
+CRIANDO A FUNÇÃO PARA MOSTRAR O ZERO À ESQUERDA
+function zeroAEsquerda(num) {
+    return num >= 10 ? num : `0${num}`
+}
+
+
+ADICIONANDO A FUNÇÃO ZERO A ESQUERDA NA FUNÇÃO DE FORMATAR A DATA
+function formataData(data) {
+    const dia = zeroAEsquerda(data.getDate());
+    const mes = zeroAEsquerda(data.getMonth() + 1);
+    const ano = zeroAEsquerda(data.getFullYear());
+    const hora = zeroAEsquerda(data.getHours());
+    const min = zeroAEsquerda(data.getMinutes());
+    const seg = zeroAEsquerda(data.getSeconds());
+
+    return `${dia}/${mes}/${ano} ${hora}:${min}:${seg}`
+}
+
+const data = new Date();
+const dataBrasil = formataData(data);
+console.log(dataBrasil);
+*/
