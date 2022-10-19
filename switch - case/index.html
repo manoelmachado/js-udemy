@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch - case</title>
+</head>
+<body>
+    <h1>Switch - case</h1>
+    <h2>A declaração switch é usada para realizar diferentes ações baseadas em condições diferentes.</h2>
+    
+    <p>Usamos a condição <strong>switch</strong> para selecionar uma linha de código de um bloco de códigos para ser executado, vejamos abaixo:</p>
+
+    <p>
+        swtich(expressao) {  <br>
+        case x: <br>
+        // bloco de código <br>
+        break; <br>
+        case y: <br>
+        // bloco de código <br>
+        break. <br>
+        padrão/default: <br>
+        // code block <br>
+        }
+    </p>
+   
+    <h3>É assim que funciona:</h3>
+    <p>
+        A expressão do switch é avaliada uma vez.<br>
+        O valor da expressão é comparado com os valores de cada caso. <br>
+        Se algum dos resultados corresponder, o bloco associado irá ser executado. <br>
+        Se nenhum dos resultados corresponderem, o bloco padrão será executado
+    </p>
+    <hr>
+
+    <h3>Exemplos:</h3>
+    <p>O metodo getDay() nos retorna o dia da semana como um número de 0 até 6.</p>
+    <p>Domingo = 0, segunda = 1, terça = 2...</p>
+    <p>Esse exemplo usa o número do dia da semana para calcular o nome do dia da semana.</p>
+    <details>
+        switch (new Date().getDay()) { <br>
+            case 0: <br>
+              day = "Domingo"; <br>
+              break; <br>
+            case 1: <br>
+              day = "Segunda-feira"; <br>
+              break; <br>
+            case 2: <br>
+               day = "Terça-feira"; <br>
+              break; <br>
+            case 3: <br>
+              day = "Quarta-feira"; <br>
+              break; <br>
+            case 4: <br>
+              day = "Quinta-feira"; <br>
+              break; <br>
+            case 5: <br>
+              day = "Sexta-feira"; <br>
+              break; <br>
+            case 6: <br>
+              day = "Sábado"; <br>
+          } <br>
+    </details>
+    <p>O resultado vai ser:</p>
+    <p id="demo"></p>
+    <hr>
+    <h3>A palavra-chave padrão/default</h3>
+    <p>A palavra-chave padrão/default especifica um código para ser executado caso nenhum resultado corresponda à expressão.</p>
+    <details>
+        switch (new Date().getDay()) { <br>
+            case 6: <br>
+              text = "Hoje é sábado"; <br>
+              break; <br>
+            case 0: <br>
+              text = "Hoje é domingo"; <br>
+              break; <br>
+            default: <br>
+              text = "Estou ansioso pelo próximo fim de semana"; <br>
+          }
+    </details>
+    <p>O resultado vai ser:</p>
+    <p id="demo1"></p>
+    <hr>
+    <h3>Blocos de código em comum</h3>
+    <p>Em alguns momentos você vai querer diferentes switch/case para executar o mesmo código.</p>
+    <p>Nesse exemplo, o case 4 e 5 compartilham o mesmo bloco de código, enquanto o 0 e 6 compartilham outro bloco de código.</p>
+    <details>
+        switch (new Date().getDay()) { <br>
+            case 4: <br>
+            case 5: <br>
+              text = "Logo será fim de semana"; <br>
+              break; <br>
+            case 0: <br>
+            case 6: <br>
+              text = "É fim de semana"; <br>
+              break; <br>
+            default: <br>
+              text = "Estou ansioso pelo fim de semana"; <br>
+          }
+    </details>
+    <p>O resultado vai ser:</p>
+    <p id="demo2"></p>
+    <hr>
+    <h3>Detalhes importantes:</h3>
+    <p>Se vários casos corresponderem ao valor do case, o primeiro case será selecionado.</p>
+    <p>Se nenhum dos casos corresponderem, o programa continuará e executará o padrão/default.</p>
+    <p>Em caso de não encontrar nenhum padrão/default, o programa continuará para a declaração após o switch.</p>
+    
+
+
+    <script>
+        let day;
+        switch (new Date().getDay()) {
+            case 0:
+                day = "Domingo";
+                break;
+            case 1:
+                day = "Segunda-feira";
+                break;
+            case 2:
+                day = "Terça-feira";
+                break;
+            case 3:
+                day = "Quarta-feira";
+                break;
+            case 4:
+                day = "Quinta-feira";
+                break;
+            case 5:
+                day = "Sexta-feira";
+                break;
+            case  6:
+                day = "Sábado";
+        }
+        document.getElementById("demo").innerHTML = "Hoje é " + day;
+
+        let text;
+        switch (new Date().getDay()) {
+            case 6:
+                text = "Hoje é sábado";
+                break;
+            case 0:
+                text = "Hoje é domingo";
+                break;
+            default:
+                text = "Estou ansioso pelo próximo fim de semana ";
+        }
+        document.getElementById("demo1").innerHTML = text;
+
+        let text1;
+        switch (new Date().getDay()) {
+            case 4:
+            case 5:
+        text1 = "Soon it is Weekend";
+        break;
+            case 0:
+            case 6:
+        text1 = "It is Weekend";
+        break;
+            default:
+        text1 = "Estou ansioso pelo fim de semana";
+        }
+        document.getElementById("demo2").innerHTML = text1;
+    </script>
+</body>
+</html>
