@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="script.js">Exercícios</a>
+    <h1>Atribuição via desestruturação (destructuring assignment)</h1>
+    <h3>A sintaxe de atribuição via desestruturação (destructuring assignment) é uma expressão em JavaScript que possibilita extrair dados de arrays ou objetos em variáveis distintas.</h3>
+    <h2>Sintaxe</h2>   
+    <p>
+        var a, b, rest; <br>
+        [a, b] = [1, 2]; <br>
+        console.log(a); // 1 <br>
+        console.log(b); // 2 <br>
+<br>
+        [a, b, ...rest] = [1, 2, 3, 4, 5]; <br>
+        console.log(a); // 1 <br>
+        console.log(b); // 2 <br>
+        console.log(rest); // [3, 4, 5] <br>
+<br>
+        ({a, b} = {a:1, b:2}); <br>
+        console.log(a); // 1 <br>
+        console.log(b); // 2 <br>
+    </p>
+    <h2>Descrição</h2>
+    <p>As expressões de objeto e matriz literais fornecem uma maneira fácil de criar pacotes ad hoc (para essa finalidade) de dados.</p>
+    <p>var x = [1, 2, 3, 4, 5];</p>
+    <p>A atribuição via desestruturação usa sintaxe similar, mas no lado esquerdo da atribuição são definidos quais elementos devem ser extraídos da variável de origem.</p>
+    <p>
+        var x = [1, 2, 3, 4, 5]/ <br>
+        var [y, z] = x; <br>
+        console.log(y); // 1 <br>
+        console.log(z); // 2 <br>
+    </p>
+    <h2>Desestruturação de array</h2>
+    <h3>Atribuição básica de variável</h3>
+    <p>
+        var foo = ["one", "two", "three"]; <br>
+        var [one, two, three] = foo; <br>
+        console.log(one); // "one" <br>
+        console.log(two); // "two" <br>
+        console.log(three); // "three" <br>
+    </p>
+    <h3>Atribuição separada da declaração</h3>
+    <p>Uma variável pode ter seu valor atribuído via desestruturação separadamente da declaração dela.</p>
+    <p>
+        var a, b; <br>
+        [a, b] = [1. 2]; <br>
+        console.log(a); // 1 <br>
+        console.log(b); // 2 <br>
+    </p>
+    <h3>valores padrão</h3>
+    <p>Uma variável pode ser atribuída de um padrão, no caso em que o valor retirado do array é undefined.</p>
+    <p>
+        var a, b; <br>
+        [a=5, b=7] = [1]; <br>
+        console.log(a); // 1 <br>
+        console.log(b); // 7 <br>
+    </p>
+    <h3>Trocando variáveis</h3>
+    <p>Os valores de duas variáveis podem ser trocados em uma expressão de desestruturação.</p>
+    <p>Sem atribuição via desestruturação, trocar dois valores requer uma variável temporária.</p>
+    <p>
+        var a = 1; <br>
+        var b = 3; <br>
+        [a, b] = [b, a]; <br>
+        console.log(a); // 3 <br>
+        console.log(b); // 1 <br>
+    </p>
+    <h3>Analisando um array retornado de uma função</h3>
+    <p>Sempre foi possível retornar uma matriz de uma função. A desestruturação pode tornar mais conciso o trabalho com um valor de retorno do tipo array.</p>
+    <p>Nesse exemplo, f() retorna os valores [1, 2] como saída, que podem ser analisados em uma única linha com desestruturação.</p>
+    <p>
+        function f() { <br>
+            return [1, 2]; <br>
+        } <br>
+        var a, b; <br>
+        [a, b] = f(); <br>
+        console.log(a); // 1 <br>
+        console.log(b); // 2 <br>
+    </p>
+    <h3>Ignorando alguns valores retornados</h3>
+    <p>Você pode ignorar valores retornados que você não tem interesse:</p>
+    <p>
+        function f() { <br>
+            return [1, 2, 3]; <br>
+        } <br>
+        var [a, ,b] = f(); <br>
+        console.log(a); // 1 <br>
+        console.log(b); // 2 <br>
+    </p>
+    <p>Você pode também ignorar todos os valores retornados.</p>
+    <p>[,,] = f();</p>
+    <h3>Atribuindo o resto de um array para uma variável</h3>
+    <p>Ao desestruturar um array, você pode atribuir a parte restante deste em uma variável usando o padrão rest:</p>
+    <p>
+        var [a, ...b] = [1, 2, 3]; <br>
+        console.log(a); // 1 <br>
+        console.log(b); // 2 <br>
+    </p>
+</body>
+</html>
