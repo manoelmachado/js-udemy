@@ -10,6 +10,7 @@
     <a href="script.js">Exercícios</a>
     <h1>Atribuição via desestruturação (destructuring assignment)</h1>
     <h3>A sintaxe de atribuição via desestruturação (destructuring assignment) é uma expressão em JavaScript que possibilita extrair dados de arrays ou objetos em variáveis distintas.</h3>
+    <h1>Atribuição via desestruturação em arrays</h1>
     <h2>Sintaxe</h2>   
     <p>
         var a, b, rest; <br>
@@ -101,6 +102,39 @@
         var [a, ...b] = [1, 2, 3]; <br>
         console.log(a); // 1 <br>
         console.log(b); // 2 <br>
+    </p>
+<hr>
+<hr>
+    <h1>Atribuição via desestruturação em objetos</h1>
+    <h3>Atribuição básica</h3>
+    <p>
+        var o = {p: 42, q: true}; <br>
+        var {p, q} = o; <br>
+        console.log(p); // 42 <br>
+        console.log(q); // true
+    </p>
+    <h2>Atribuição sem declaração</h2>
+    <p>Uma variável pode ter seu valor atribuído via desestruturação separadamente da sua declaração.</p>
+    <p>
+        var a, b; <br>
+        ({a, b} = {a:1, b:2}); <br>
+    </p>
+    <p><strong>Nota: os parênteses (...) ao redor da declaração de atribuição é uma sintaxe necessária quando se utiliza a atribuição via desestruturação de objeto literal sem uma declaração. <br>
+    {a, b} = {a:1, b:2} não é uma sintaxe stand-alone válida, pois {a, b} no lado esquerdo é considerada um bloco, não um objeto literal. <br>
+    No entanto, ({a, b} = {a:1, b:2}) é válida, assim como var {a, b} = {a:1, b:2}
+    </strong></p>
+    <h2>Atribuição para variáveis com novos nomes</h2>
+    <p>Uma variável pdoe ser extraída de um objeto e atribuída a uma variável com um nome diferente da propriedade do objeto.</p>
+    <p>
+        var o = {p: 42, q: true}; <br>
+        var {p: foo, q: bar} = o;
+    </p>
+    <h2>Valores padrão</h2>
+    <p>Uma variável pode ser atribuída de um padrão, no caso em que o valor retirado do objeto é undefined.</p>
+    <p>
+        var {a=10, b=5} = {a: 3}; <br>
+        console.log(a); // 3 <br>
+        console.log(b); // 5 
     </p>
 </body>
 </html>
