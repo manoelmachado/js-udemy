@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Estrutura de repetição FOR</h1>
+    <h2>Sintaxe:</h2>
+    <p>
+        for (expressão 1; expressão 2; expressão 3) { <br>
+            // linha de código a ser executado <br>
+        }
+    </p>
+    <p>Expressão 1 é executada (apenas uma vez) antes da execução da linha de código.</p>
+    <p>Expressão 2 define a condição para o código ser executado.</p>
+    <p>Expressão 3 é executada (todas as vezes) depois do código de bloco foi executado.</p>
+    <p>Exemplo:</p>
+    <p>
+        for (let i = 0; i < 5; i++) { <br>
+        text += "O número é " + i "&lt;br&gt;" <br>
+        }
+    </p>
+    <p>
+        No exemplo de cima, você pode ler que: <br>
+        A expressão 1 definiiu uma variável antes do loop começar (let i = 0) <br>
+        A expressão 2 define a condição para o loop ser realizado (variável i precisa ser menor que 5) <br>
+        A expressão 3 aumenta o valir (i++) a cada vez que a linha de código da repetição é executada.
+    </p>
+    <h2>Expressão 1:</h2>
+    <p>
+        Normalmente você usará a expressão 1 para inicializar a variável usada no loop (let i = 0) <br>
+        Esse nem sempre será o caso.  O JavaScript não se importa, a expressão 1 é opcional. <br>
+        Você pode iniciar com vários valores na expressão 1 (separados por virgulas).
+    </p>
+    <p>Exemplo:</p>
+    <p>
+        const cars = ["BMW", "Volvo", "Saab", "Ford"]; <br>
+        for (let i = 0, let = cars.length, text = ""; i < len; i++) { <br>
+            text += cars[i] + "&lt;br&gt;"; <br>
+        }
+    </p>
+    <p>E você pode omitir a expressão 1 (como se os valores já foram colocados antes do loop começar):</p>
+    <p>
+        const cars = ["BMW", "Volvo", "Saab", "Ford"]; <br>
+        let i = 2; <br>
+        let len = cars.length; <br>
+        let text = ""; <br>
+        for (; i < len; i++) { <br>
+            text += cars[i] + "&lt;br&gt;"; <br>
+        }
+    </p>
+    <h2>Expressão 2:</h2>
+    <p>
+        Frequentemente a expressão 2 é usada para avaliar a condição da variável inicial. <br>
+        Esse nem sempre será o caso. O JavaScript não se importa, a expressão 2 também é opcional. <br>
+        Se a expressão 2 retornar um valor true, o loop irá iniciar novamente. Se retornar um valor falso, o loop vai finalizar.
+    </p>
+    <p><strong>Se você omitir a expressão 2, você terá que adicionar um break dentro do loop. Caso contrário o loop não acabará e isso irá quebrar seu navegador/site.</strong></p>
+    <h2>Expressão 3:</h2>
+    <p>
+        Frequentemente a expressão 3 incrementa o valor inicial da variável. <br>
+        Esse nem sempre é o caso. O JavaScript não se importa, a expressão 3 também é opcional. <br>
+        A expressão 3 pode fazer qualquer coisa tipo incremento negativo (i--), incremento positivo (i++), ou qualquer coisa. <br>
+        A expressão 3 também pode ser omitida caso você adicione o incremento dentro do loop.
+    </p>
+    <p>Exemplo:</p>
+    <p>
+        let i = 0 <br>
+        let len = cars.length; <br>
+        let text = ""; <br>
+        for (; i < len; ) { <br>
+            text += cars[i] + "&lt;br&gt;"; <br>
+            i++; <br>
+        }
+    </p>
+    <hr>
+    <h2>Escopo loop</h2>
+    <p>Usando <strong>var</strong> em um loop:</p>
+    <p>
+        var i = 5; <br>
+        for (var i = 0; i < 10; i++) { <br>
+            // código <br>
+        } <br>
+        // aqui i é 10 <br>
+    </p>
+    <p>Usando <strong>let</strong> em um loop:</p>
+    <p>
+        let i = 5; <br>
+        for (let i = 0; i < 10; i++) { <br>
+            // código <br>
+        } <br>
+        // aqui i é 5 <br>
+    </p>
+    <p>
+        No primeiro exemplo, usando VAR, a variável declarada no loop redeclara a outra variável fora do loop. <br>
+        No segundo exemplo, usando LET, a variável declarada no loop NÃO redeclara a outra variável fora do loop. <br>
+        Quando LET é usado para declarar uma variável dentro de um loop, a variável ficará somente visivel dentro do loop.
+    </p>
+</body>
+</html>
