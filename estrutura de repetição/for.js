@@ -20,8 +20,12 @@ for (let i = 0 ; i <= 10 ; i++ ) {
 // i++ estamos incrementando um valor à variável
 */
 
-const frutas = ['Maça', 'Banana', 'Uva', 'Pêra'];
 
-for (let i = 0; i <= frutas.length ; i++ ) {
-    console.log(frutas.length[i])
+/*
+podemos usar o for também com arrays:
+
+const frutas = ['Maça', 'Banana', 'Uva', 'Pêra'];
+for (let i = 0; i < frutas.length ; i++ ) {
+    console.log(`Índice ${i}`, frutas[i])
 }
+*/
