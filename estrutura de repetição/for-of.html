@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>For Of</h1>
+    <p>A declaração <b>For Of</b> no JavaScript faz um loop através dos valores de um objeto iterável.</p>
+    <p>Ele te permite realizar loops através de dados de estrutura iterávels como Arrays, Strings, Maps, NodeLists e mais:</p>
+    <p>
+        Sintaxe: <br>
+        for (variavel of iterável) { <br>
+            // código para ser executado <br>
+        }
+    </p>
+    <p><b>variável -</b> Para cada iteração no valor da próxima propriedade é atribuído para a variável. A variável pode ser declarada com const, let ou var.</p>
+    <p><b>iterável -</b> Um objeto que tem propriedade iterável.</p>
+    <hr>
+    <h2>Looping em um Array</h2>
+    <p>
+        const carros = ["BMW", "Volvo", "Mini"]; <br>
+        <br>
+        let texto = ""; <br>
+        for (let x of carros) { <br>
+            texto += x; <br>
+        }
+    </p>
+    <details id="demo"></details>
+    <hr>
+    <h2>Looping em uma String</h2>
+    <p>
+        let linguagem = "JavaScript"; <br>
+        <br>
+        let texto = ""; <br>
+        for (let x of linguagem) { <br>
+            texto += x; <br>
+        }
+    </p>
+    <details id="demo1"></details>
+
+
+
+
+
+
+
+
+
+    <script>
+        const carros = ["BMW", "Volvo", "Mini"];        
+        let texto = "";
+        for (let x of carros) {
+          texto += x + "<br>";
+        }  
+        document.getElementById("demo").innerHTML = texto;
+
+        let linguagem = "JavaScript";
+        let texto1 = "";
+        for (let x of linguagem) {
+        texto1 += x + "<br>";
+        }
+        document.getElementById("demo1").innerHTML = texto1;
+
+    </script>
+
+</body>
+</html>

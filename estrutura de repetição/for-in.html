@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>For  in</h1>
+    <p>
+        A declaração <b>for in</b> no JavaScript faz um loop através das propriedades de um objeto: <br>
+        Sintaxe <br>
+        for (key in object) { <br>
+            // linha de código para ser executado <br>
+        }
+    </p>
+    <h2>Exemplo:</h2>
+    <p>
+        const pessoa = {fname:"Manoel", lname:"Machado", age:30}; <br>
+        let text = ""; <br>
+        for (let x in pessoa) { <br>
+            text += pessoa[x]; <br>
+        }
+    </p>
+    <details id="demo"></details>
+    <p>
+        Explicando o exemplo: <br>
+        O loop for in itera(repete) sobre o objeto pessoa <br>
+        Cada iteração retorna a chave (x) <br>
+        A chave é utilizada para acessar o valor da chave <br>
+        O valor da chave é pessoa[x]
+    </p>
+    <hr>
+    <h2>For in em Arrays</h2>
+    <p>A declaração <b>for in</b> também faz loop sobre as propriedades de um Array:</p>
+    <p>
+        Sintaxe <br>
+        for (variavel in array) { <br>
+            // código a ser executado <br>
+        }
+    </p>
+    <p>
+        Exemplo: <br>
+        const numeros = [45, 4, 9 16, 25]; <br>
+        let texto = ""; <br>
+        for (let x in numeros) { <br>
+            texto += numeros[x]; <br>
+        }
+    </p>
+    <details id="demo1"></details>
+    <p><strong>Nota: Não use o FOR IN em um Array se a ordem do indice for importante.</strong> <br>
+    A ordem do índice é dependente da implementação, e os valores do array podem não ser acessados na ordem que você esperava. <br>
+    É melhor usar um loop <b>for</b>, um loop <b>for of</b>, ou <b>Array.forEach()</b> quando a ordem for importante.
+    </p>
+    <hr>
+    <h2>Array.forEach()</h2>
+    <p>O método <b>forEach()</b> chama uma função (uma função callback) uma vez para cada elemento do array.</p>
+    <p>
+        Exemplo <br>
+        const numeros = [45, 4, 9 16, 25]; <br>
+        let texto = ""; <br>
+        numeros.forEach(myFunction); <br>
+<br>
+        function myFunction(valor, index, array) { <br>
+            texti += valor; <br>
+        }
+    </p>
+    <details id="demo2"></details>
+    <p>
+        Note que a função tem 3 argumentos: <br>
+        O valor do item <br>
+        O index do item <br>
+        E o array em si
+    </p>
+    <p>A função acima usa somente o parametro valor. Ela pode ser reescrita assim:</p>
+    <p>
+        const numeros = [45, 4 9, 16, 25]; <br>
+        let texto = ""; <br>
+        numeros.forEach(myFunction); <br>
+        <br>
+        function myFunction(value) { <br>
+        texto += valor; <br>
+        }
+        
+    </p>
+    
+
+    <script>
+        const pessoa = {fname:"Manoel", lname:"Machado", age:30};       
+        let txt = "";
+        for (let x in pessoa) {
+          txt += pessoa[x] + " ";
+        }
+        document.getElementById("demo").innerHTML = txt;
+
+
+        const numeros = [45, 4, 9, 16, 25];
+        let texto = "";
+        for (let x in numeros) {
+        texto += numeros[x] + "<br>"; 
+        }
+        document.getElementById("demo1").innerHTML = texto;
+
+        const numeros1 = [45, 4, 9, 16, 25];
+        let texto1 = "";
+        numeros1.forEach(myFunction);
+        document.getElementById("demo2").innerHTML = texto1;
+        function myFunction(valor, index, array) {
+        texto1 += valor + "<br>"; 
+        }
+    </script>
+</body>
+</html>
