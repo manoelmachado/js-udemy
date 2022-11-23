@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Throw, try, catch e finally.</h1>
+    <p>A condição <strong>try</strong> define uma linha de código para -tentar- ser executada.</p>
+    <p>A condição <strong>catch</strong> define uma linha de código para capturar qualquer erro.</p>
+    <p>A condição <strong>finally</strong> define uma linha de código para ser executada, independente do resultado.</p>
+    <p>A condição <strong>throw</strong> define um erro padrão.</p>
+    <hr>
+    <h1>Erros vão acontecer!</h1>
+    <p>Quando estiver executando códigos JavaScript, diferentes tipos de erros podem acontecer.</p>
+    <p>Esses erros podem ser: erros de código do programador, erros causados por inputs errados e outras coisas imprevistas...</p>
+
+    <details>
+        Exemplo: nesse exemplo, nós iremos escrever o "alert" como "adddlert" errado deliberadamente para produzir um erro: <br>
+        try { <br>
+            adddlert("Bem-vindo usuário!"); <br>
+          } <br>
+          catch(err) { <br>
+            document.getElementById("demo").innerHTML = err.message; <br>
+          }
+    </details>
+    <p>O JavaScript pega o "adddlert" como um erro e executa o código do <strong>catch</strong> para cuidar disso.</p>
+<hr>
+    <h1>JavaScript try e catch</h1>
+    <p>A declaração <strong>try</strong> permite a você definir um bloco de código para ser testado para erros enquanto ele é executado.</p>
+    <p>A declaração <strong>catch</strong> permite a você definir um bloco de código para ser executado, caso aconteça algum erro no bloco de código do <strong>try</strong></p>
+    <p>As declarações <strong>try</strong> e <strong>catch</strong> vem em pares:</p>
+
+    <p>
+        try { <br>
+            bloco para ser executado como try <br>
+        } <br>
+        catch(err) { <br>
+            bloco para ser executado para cuidar das mensagens de erro <br>
+        }
+    </p>
+    <hr>
+    <h1>Declaração THROW</h1>
+    <p>A declaração <strong>throw</strong> te permite a criar um erro padrão.</p>
+    <p>Tecnicamente você pode "jogar uma exceção" (jogar um erro).</p>
+    <p>A exceção pode ser uma String, um Number, um Boolean ou um Objeto.</p>
+    <p>throw "Too big"; // texto</p>
+    <p>throw 500; // número</p>
+    
+</body>
+</html>
