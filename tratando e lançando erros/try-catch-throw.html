@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,6 +48,60 @@
     <p>A exceção pode ser uma String, um Number, um Boolean ou um Objeto.</p>
     <p>throw "Too big"; // texto</p>
     <p>throw 500; // número</p>
-    
+    <hr>
+    <h1>Exemplo de validação de entrada</h1>
+    <p>Esse exemplo examina uma entrada. Se o valor for errado, uma exceção (err) é jogada.</p>
+    <p>A excelção (err) é pega pela declaração <strong>catch</strong> e uma mensagem de erro customizada é apresentada.</p>
+    <p>
+        function myFunction() { <br>
+            const message = document.getElementById("p01"); <br>
+            message.innerHTML = ""; <br>
+            let x = document.getElementById("demo").value; <br>
+            try {  <br>
+              if(x == "")  throw "empty"; <br>
+              if(isNaN(x)) throw "not a number"; <br>
+              x = Number(x); <br>
+              if(x < 5)  throw "too low"; <br>
+              if(x > 10)   throw "too high"; <br>
+            } <br>
+            catch(err) { <br>
+              message.innerHTML = "Input is " + err; <br>
+            } <br>
+          }
+    </p>
+    <hr>
+    <h1>A declaração finally</h1>
+    <p>A declaração finally deixa você executar um código, depois do <strong>try</strong> e <strong>catch</strong> independente do resultado.</p>
+    <p>sintaxe: <br>
+        try { <br>
+            bloco para ser executado com TRY <br>
+        } <br>
+        catch(err) { <br>
+            bloco para cuidar dos erros <br>
+        } <br>
+        finally { <br>
+            bloco para ser executado independente do resultado de try / catch <br>
+        }
+    </p>
+    <p>Exemplo: <br>
+        function myFunction() { <br>
+            const message = document.getElementById("p01"); <br>
+            message.innerHTML = ""; <br>
+            let x = document.getElementById("demo").value; <br>
+            try { <br>
+              if(x == "") throw "is empty"; <br>
+              if(isNaN(x)) throw "is not a number"; <br>
+              x = Number(x); <br>
+              if(x > 10) throw "is too high"; <br>
+              if(x < 5) throw "is too low"; <br>
+            } <br>
+            catch(err) { <br>
+              message.innerHTML = "Error: " + err + "."; <br>
+            } <br>
+            finally { <br>
+              document.getElementById("demo").value = ""; <br>
+            } <br>
+          }
+    </p>
 </body>
 </html>
